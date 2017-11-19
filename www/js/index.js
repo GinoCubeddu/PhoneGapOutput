@@ -1,4 +1,5 @@
-$("document").ready(function() {
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
   $('#clickMe').on('click', function() {
     var outcome = random();
     if(outcome){
@@ -7,8 +8,8 @@ $("document").ready(function() {
       navigator.notification.beep(2);
     }
   });
+}
 
-  function random() {
-    return !Math.round(Math.random());
-  }
-});
+function random() {
+  return !Math.round(Math.random());
+}
